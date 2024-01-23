@@ -1,7 +1,10 @@
 CC := g++
 CFLAGS := -Iinclude/ -lglfw -lGL
-GLAD_PATH := src/glad.c
+GLAD_PATH := src/glad.c include/*/*.cpp
 UTILS_PATH := src/utils/*.cpp
+
+textures: src/textures/textures.cpp
+	$(CC) src/textures/textures.cpp $(GLAD_PATH) $(UTILS_PATH) $(CFLAGS) -o bin/textures
 
 shaders-exercises: src/chapterShaders/exercises.cpp
 	$(CC) src/chapterShaders/exercises.cpp $(GLAD_PATH) $(UTILS_PATH) $(CFLAGS) -o bin/shaders-exercises
