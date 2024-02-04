@@ -3,6 +3,9 @@ CFLAGS := -Iinclude/ -lglfw -lGL
 GLAD_PATH := src/glad.c include/*/*.cpp
 UTILS_PATH := src/utils/*.cpp
 
+transformations: src/transformations/transformations.cpp
+	$(CC) src/transformations/transformations.cpp $(GLAD_PATH) $(UTILS_PATH) $(CFLAGS) -o bin/transformations
+
 textures: src/textures/textures.cpp
 	$(CC) src/textures/textures.cpp $(GLAD_PATH) $(UTILS_PATH) $(CFLAGS) -o bin/textures
 
